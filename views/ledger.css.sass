@@ -1,0 +1,86 @@
+body
+  :background #d1d1d1
+  :line-height 1.5em
+
+/* form colour
+.hide
+  :display none
+form
+  :background #F2F2F2
+  label
+    :color #424242
+  =border-radius .5em
+  input
+    :font-size 2em
+    :font-family 'Inconsolata',sans-serif; 
+  :display block
+  :overflow hidden
+  :padding 1em
+  div
+    :float left
+    :padding .5em
+  label
+    :font-family 'IM Fell Great Primer SC', "Arial"
+    :display block
+    :margin-bottom .1em
+    :font-size 1.75em
+  .button
+    =border-radius .3em
+
+/*  form style
+
+/*  form structure
+
+/*  ledger colour
+
+.ledger .list .item
+  :background #E8E8E8
+
+/*  ledger
+
+.item.focused
+  :margin-left 2em
+
+.ledger
+  .list
+    .item
+      :overflow hidden
+      :padding 1em
+      =border-radius .6em
+      :clear both
+      :width 50em
+      :overflow hidden
+      :margin-bottom .25em
+      span
+        :font-family 'Inconsolata',sans-serif; 
+        :font-size 1.95em
+      .name
+        :width 28em
+      .amount
+        :width 10em
+    form
+      .controls
+        :padding-top 2em
+        :padding-left 1em
+      .dollars
+        :width 5em
+  .item form .name input
+    :width 14em
+
+.item .dollars:before
+  :content "$"
+
+.ledger .item
+  .properties > div
+    &:first-child
+      :margin-left 1em
+    &:last-child
+      :margin-right 1em
+    :float left
+    =border-radius .6em
+    :background #F2F2F2
+    :padding .5em
+    :margin-left .5em
+  form label:after
+    :content " : "
+

@@ -1,0 +1,20 @@
+-- monogdb node --
+invalid method call in a callback - responds with
+TypeError: Cannot call method 'insert' of null
+
+   it('can be updated', function(){
+    var ledger = new Ledger();
+    var returned_item = 0;
+    updated_item = function(item) {
+    expect(item.value == 1).toEqual(true);
+    asyncSpecDone();
+    };
+    saved_callback = function(item) {
+    item["value"] = 1;
+    asyncSpecDone();
+    // ledger.update(item);
+    };
+    ledger.append({name:'A Thing', value: "A Value"},saved_callback);
+    asyncSpecWait(); 
+    });
+

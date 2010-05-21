@@ -1,0 +1,8 @@
+%h1= title
+%table#ledger
+  - each item in ledger_items
+    %tr.item
+      %td.date.created_at= item.created_at
+      %td.title= item.title
+      %td.amount= item.amount
+

@@ -1,0 +1,98 @@
+.hide {
+    display:none;
+  }
+  body {
+      background:#d1d1d1;
+        line-height:1.5em;
+      }
+      /* form colour */
+      form {
+          background: #F2F2F2;    
+        }
+        form label {
+            color:#424242;    
+          }  
+          /*  form style */
+          form {
+              -moz-border-radius: .5em;
+            }
+            form input {
+                font-size:2em;    
+              }  
+              /*  form structure */
+              form {
+                  display:block;    
+                    overflow:hidden;
+                      padding:1em;
+                    }
+                    form div{
+                        float:left;
+                          padding:.5em;
+                        }
+                        form input {
+                        }
+                        form label {
+                            display:block;
+                              margin-bottom:.1em;
+                                font-size:1.75em;
+                              }  
+                              form .button {
+                                  -moz-border-radius: .3em;
+                                }
+                                /*  ledger colour */
+                                .ledger .list .item {
+                                    background:#E8E8E8;
+                                  }
+                                  /*  ledger  */
+                                  .item.focused{  
+                                      margin-left:2em;
+                                    }
+
+                                    .ledger .list .item{
+                                        overflow:hidden;
+                                          padding:1em;    
+                                            -moz-border-radius: .6em;
+                                              clear:both; 
+                                                width:50em;
+                                                  overflow:hidden;
+                                                    margin-bottom:.25em;
+                                                  }
+                                                  .ledger .list .item span {    
+                                                      font-size:1.95em;
+                                                    }
+                                                    .ledger .list .item .name  {    
+                                                        width:28em;
+                                                      }  
+                                                      .ledger .list .item .amount  {    
+                                                          width:10em;
+                                                        }
+                                                        .ledger .list form .controls {
+                                                            padding-top:2em;
+                                                              padding-left:1em;
+                                                            }
+                                                            .ledger .list form .dollars{
+                                                                width:5em;    
+                                                              }
+
+                                                              .ledger .item form .name input{
+                                                                  width:14em;
+                                                                }
+                                                                .item .dollars:before {
+                                                                    content: "$";
+                                                                  }  
+                                                                  .ledger .item .properties > div:first-child {
+                                                                      margin-left:1em;
+                                                                    }
+                                                                    .ledger .item .properties > div:last-child {
+                                                                        margin-right:1em;
+                                                                      }
+                                                                      .ledger .item .properties > div {
+                                                                          float:left;
+                                                                            -moz-border-radius: .6em;
+                                                                              background:#F2F2F2;
+                                                                                padding:.5em;
+                                                                                  margin-left: .5em;
+                                                                                }
+                                                                                .ledger .item form label:after {
+                                                                                    content:" : ";
+                                                                                  }
