@@ -19,8 +19,8 @@ var create_dom_from = function(id,object)
   var properties = []
   for(var key in object) {
     property = {};
-    property.kind = 'text';
-    property.type = key;
+    property.kind = key;
+    property.type = 'text';
     property.value = object[key];
 
     $(prop_node).append(create_dom_ledger_item(property));
@@ -49,7 +49,7 @@ var create_dom_ledger_form_input = function(property)
 var create_dom_ledger_item = function(property)
 {
   struct = $("<div class='"+property.kind+
-             "'>\n<label>"+property.type+"</label><span class='"+property.type+
+             "'>\n<label>"+property.kind+"</label><span class='"+property.type+
                "'>\n"+property.value+ "</span>"+
                  "</div>\n");
   struct.hide();
@@ -79,20 +79,25 @@ var ledger_size = function()
 var update_ledger_from_form = function(focus)
 {  
   var item = ledger_form_to_struct(focus);
-  $.post('/ledger/update', { id: focus.attr('id'),json: JSON.stringify(item) } , function(json) {
+  $.ajax('PUT','http://localhost:8002/', { callback:'?',_id: focus.attr('id'),json: JSON.stringify(item) } , function(json) {
     $('#'+json.id).replace(create_dom_from(json.id,json.properties));
     switch_to_edit_form(focus);
   });
 };
 
+var insert = function() {
+
+}
+
 var create_ledger_from_form = function(focus)
 {
   var id = ledger_size();
   var item = ledger_form_to_struct(focus);
-  $.post('/ledger/create', { json: JSON.stringify(item) } , function(id) {
+  
+  $.ajax('POST','http://localhost:8001/', {callback: '?', json: JSON.stringify(item) } , function(id) {
     var item = create_dom_from(id,item);
     $('.ledger .list #create_ledger_form').after(item);
-  });
+  },"json");
 };
 
 var decorate_textfields = function()
@@ -152,7 +157,7 @@ var uparrow = function()
 var enter = function()
 { 
   var focus = focused_item();
-  if (focus === $('#create_ledger_form')        )
+  if (focus.attr('id') === 'create_ledger_form')
     {       
       if (form_complete(focus)) {
         create_ledger_from_form(focus);

@@ -1,11 +1,14 @@
 %h1= title
 .ledger
   .list
-    %form#create_ledger_form.item
+    %form#create_ledger_form.item.focused
       .name
         %label Name
         %input.text{type:"textfield"}
       .amount
         %label Amount
         %input.dollars{type:"textfield"}
-
+      .button
+        %label Actions
+        .actions
+          %a{href:'#',onclick:'insert();'} Store

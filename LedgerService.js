@@ -98,3 +98,5 @@ Ledger.prototype.service = function() {
 };
 
 exports.Ledger = Ledger;
+
+new Ledger().service();
